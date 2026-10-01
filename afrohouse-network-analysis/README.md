@@ -35,6 +35,23 @@
 - **Transnational, two-way exchange:** the genre is anchored in Southern Africa and amplified through European clubs, festivals and platforms. Brokers such as Idd Aziz, Da Capo and HUGEL connect the two regions.
 - **Platforms as amplifiers:** curated playlists reinforce existing hierarchies rather than reflecting popularity neutrally.
 
+## Visualisations (Gephi)
+**Core of the network:** node size = degree, colour = Louvain community, edge width = number of shared tracks. The South African scene (Black Coffee, Black Motion, Da Capo, Caiiro) sits beside the Keinemusik / Adam Port / Rampa cluster from Europe, and HUGEL's community joins through a few bridge edges.
+
+![Core network communities](figures/core_network_communities.png)
+
+![Core network, zoomed](figures/core_network_zoom.png)
+
+**Brokers and hubs:** Idd Aziz's community links East African vocal work (with Francis Mercier and Nitefreak) to European house. Cafe De Anatolia is a hub with many small, separate collaborators.
+
+| Transnational broker: Idd Aziz | Global hub: Cafe De Anatolia |
+|---|---|
+| ![Idd Aziz](figures/broker_idd_aziz.png) | ![Cafe De Anatolia](figures/hub_cafe_de_anatolia.png) |
+
+**Full network:** a dense core surrounded by hundreds of small, disconnected groups. This is the core–periphery structure behind the "structural inequality" finding.
+
+<img src="figures/full_network_periphery.png" width="420">
+
 ## Reproducibility note
 The notebook pulls **live** Spotify data, so re-running it produces a slightly different network from the dissertation dataset. The January 2026 re-run had 3,085 artists and 4,848 ties, with 72% of artists in the largest component. The structural conclusions (hub concentration, the same broker artists) hold across runs.
 
