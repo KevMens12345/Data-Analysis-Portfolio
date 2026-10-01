@@ -1,4 +1,4 @@
-# Afro House Artist Collaboration Network
+# Afro House Artist Collaboration Network (Dissertation)
 
 **Question:** Who are the most connected artists in the Afro House scene, which artists bridge different sub-scenes, and what communities exist?
 
