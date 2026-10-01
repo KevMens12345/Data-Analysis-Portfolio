@@ -12,3 +12,7 @@ faker
 fpdf
 pyngrok
 pycountry
+scipy
+statsmodels
+xgboost
+yellowbrick

@@ -16,6 +16,10 @@ A mixed-methods study using Spotify API data, network analysis (NetworkX, Gephi,
 | [Big Data Pipeline](big-data-hive-spark/) | Can a 5M-row dataset be processed on a distributed stack? | HDFS, Hive on Tez/YARN, PySpark SQL + Spark ML, Docker | 5,015,737 rows aggregated in ~12 s; synthetic-data and outlier issues flagged |
 | [Telecom MySQL Database](telecom-mysql-database/) | How should an operator's customers, usage and billing be modelled and queried? | 9-table 3NF schema, ERD, joins, window functions, stored procedure, data-quality checks | 41% of June billing collected; 3 query bugs and 3 data-consistency issues found and fixed |
 | [Hospital Management SQL App](hospital-management-sql-app/) | How can hospital operations KPIs be served from a relational database? | SQLite schema, parameterised SQL, Streamlit dashboard, PDF reporting | 6-table database, 5 SQL KPIs, interactive dashboard |
+| [A/B Test: Landing Page](ab-test-landing-page/) | Does a redesigned page lift engagement and conversion? | Welch t-test, two-proportion z-test, chi-square, ANOVA | Conversion 66% vs 42% (p = 0.008); roll out the new page |
+| [Sensor-Based Quality Prediction](coffee-roasting-quality-prediction/) | Can roasting-machine sensors predict product quality? | Random Forest, Gradient Boosting, XGBoost, tuning, pipelines, leakage check | R² 0.92 on a random split; time-ordered split exposes leakage (R² ≈ 0) |
+| [Stock Segmentation](stock-clustering-trade-ahead/) | Which financial profiles exist among 340 NYSE stocks? | Scaling, K-means, hierarchical clustering, profiling | 4 segments; distressed cluster is 72% Energy |
+| [Bitcoin Price Forecasting](bitcoin-price-forecasting/) | Can ML predict next-day BTC price? | RFE/LASSO, RF, Linear Regression, KNN, time-ordered evaluation, naive baseline | No model beats "tomorrow = today"; 48% direction accuracy |
 | [Social Media Engagement Clustering](social-media-engagement-clustering/) | Which engagement segments exist in a brand's Facebook posts? | Log transform, scaling, elbow method, K-Means vs. hierarchical, PCA | 3 segments; K-Means silhouette 0.346 vs. 0.228 for hierarchical |
 | [Mushroom Classification](mushroom-classification/) | Can physical traits predict if a mushroom is poisonous? | EDA, label encoding, 7 classifiers compared | Tree models reach 100% test accuracy; odor alone almost separates the classes |
 
@@ -26,7 +30,7 @@ pip install -r requirements.txt
 ```
 
 ## Tools
-Python (pandas, NumPy, scikit-learn, NetworkX, matplotlib, seaborn, Streamlit) · SQL (MySQL, SQLite, HiveQL) · PySpark · Hadoop/HDFS · APIs · Tableau · Gephi · R
+Python (pandas, NumPy, scikit-learn, SciPy/statsmodels, XGBoost, NetworkX, matplotlib, seaborn, Streamlit) · SQL (MySQL, SQLite, HiveQL) · PySpark · Hadoop/HDFS · APIs · Tableau · Gephi · R
 
 ## Contact
 s.kevmens@gmail.com
