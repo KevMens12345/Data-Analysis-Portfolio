@@ -11,3 +11,4 @@ streamlit
 faker
 fpdf
 pyngrok
+pycountry
