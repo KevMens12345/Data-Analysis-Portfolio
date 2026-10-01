@@ -1,32 +1,42 @@
-# Afro House Artist Collaboration Network (Dissertation)
+# Mapping the Global Influence Network of Afrohouse Artists and Producers
 
-**Question:** Who are the most connected artists in the Afro House scene, which artists bridge different sub-scenes, and what communities exist?
+**MSc Data Analytics dissertation, BSBI / UCA:** *a data-driven analysis of collaboration, centrality and cultural exchange.*
 
-**Data:** Collected with the Spotify Web API (`spotipy`) from 25 Afro House / Afro Tech / Organic House playlists. Playlists with irrelevant titles (workout, sleep, etc.) were filtered out.
+## Research questions
+1. What does the global Afrohouse collaboration network look like in structure and density?
+2. Which artists, labels or cities act as influence hubs?
+3. How does the network show cross-cultural connections between African and European creative communities?
+4. How far can network metrics (centrality, modularity, clustering) explain the genre's spread and prominence?
+5. How can data visualisation improve understanding of the genre's cultural and geographic dynamics?
 
-## Pipeline
-1. **Collection:** Keyword search for playlists, a title noise filter, then all tracks from each playlist (pagination handled): **5,458 tracks, 4,724 artists**.
-2. **Relevance filter:** Artist genre tags were matched to Afro House markers. **2,372 artists** are Afro-relevant, leaving **4,396 tracks**.
-3. **Edges:** Artists who appear on the same track are linked. The edge weight is the number of shared tracks.
-4. **Quality checks:** Checked that every edge ID is in the artist table, that there are no self-loops, and how the edge weights are distributed.
-5. **Network analysis (`networkx`):** Weighted degree, betweenness, and eigenvector centrality, plus Louvain community detection.
-6. **Export:** Node and edge tables for Tableau and Gephi.
+## Method (mixed-source, quantitative)
+- **Network data:** Spotify Web API, covering playlist discovery, track and artist metadata, and genre-based relevance filtering. Artists credited on the same track are linked, as a weighted, undirected graph built in NetworkX.
+- **Metrics:** degree, betweenness and eigenvector centrality, density, connected components, and Louvain communities.
+- **Visualisation:** Gephi (network) and Tableau (geographic and relational views).
+- **Primary data:** an online audience survey of about 72 listeners, DJs and music professionals, used to put influence and discovery pathways in context.
 
-## Results
-| Metric | Value |
+## Key findings
+| Metric (dissertation dataset) | Value |
 |---|---|
-| Nodes / edges | 3,085 artists / 4,848 collaborations |
-| Connected components | 308 |
-| Largest component | 2,230 artists (72% of the network) |
-| Density | 0.001, so the network is sparse and held together by a few hubs |
+| Artists / collaborative ties | 2,988 / 4,744 |
+| Density | 0.00106 (very sparse) |
+| Average / maximum degree | 3.18 / 139 |
 
-- **Most connected artist:** Cafe De Anatolia, with a weighted degree of 220.
-- **Top bridge artist:** Idd Aziz has the highest betweenness (0.116). He links communities that would otherwise be separate, even though he has far fewer followers than the hubs.
+| Artist | Degree | Betweenness | Playlist exposure | Structural role |
+|---|---|---|---|---|
+| Cafe De Anatolia | 139 | 0.115 | 122 | Global hub and broker |
+| Black Coffee | 64 | 0.048 | 50 | Scene anchor |
+| Idd Aziz | 49 | 0.097 | 33 | Transnational broker |
+| Da Capo | 46 | 0.054 | 46 | Regional stabiliser |
+| Caiiro | 42 | 0.033 | 54 | Scene-embedded hub |
 
-## Limitations
-- The sample is playlist-driven: 25 playlists reflect how curators see the scene, not the full catalogue.
-- Genre tags on Spotify are incomplete, so the relevance filter misses some artists.
-- An edge means the artists are credited on the same track. It does not mean they collaborated in a studio.
+- **Core–periphery inequality:** a few hubs hold most connections and playlist exposure. Most artists sit on the periphery, a pattern consistent with cumulative advantage.
+- **Influence ≠ popularity:** influence comes from network position (repeated collaboration and brokerage) and from playlist curation, not only from follower counts. For example, Idd Aziz ranks as a top bridge despite a relatively small audience.
+- **Transnational, two-way exchange:** the genre is anchored in Southern Africa and amplified through European clubs, festivals and platforms. Brokers such as Idd Aziz, Da Capo and HUGEL connect the two regions.
+- **Platforms as amplifiers:** curated playlists reinforce existing hierarchies rather than reflecting popularity neutrally.
+
+## Reproducibility note
+The notebook pulls **live** Spotify data, so re-running it produces a slightly different network from the dissertation dataset. The January 2026 re-run had 3,085 artists and 4,848 ties, with 72% of artists in the largest component. The structural conclusions (hub concentration, the same broker artists) hold across runs.
 
 ## Run
-Create a Spotify developer app and enter the Client ID and Secret when prompted.
+Create a Spotify developer app and enter the Client ID and Secret when prompted. Credentials are read with `getpass` and never stored.

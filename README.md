@@ -2,8 +2,8 @@
 
 Projects in data collection, data cleaning, SQL, network analysis, and machine learning.
 
-## ⭐ Featured: Afro House Collaboration Network (dissertation)
-Built an artist collaboration network from Spotify API data (5,458 tracks, 4,724 artists). The pipeline covers API collection, relevance filtering, data-quality checks, network centrality, Louvain community detection, and Tableau/Gephi exports. **3,085 artists and 4,848 collaborations; 72% of artists sit in one connected component; Idd Aziz is the top bridge artist.** → [Project](afrohouse-network-analysis/)
+## ⭐ Featured: Afrohouse Global Influence Network (MSc dissertation)
+A mixed-methods study using Spotify API data, network analysis (NetworkX, Gephi, Tableau) and a 72-respondent survey. The network has **2,988 artists and 4,744 ties**, with a strong core–periphery structure. Influence comes from **network position and playlist curation, not popularity alone**. Southern Africa and Europe exchange in both directions through broker artists. → [Project](afrohouse-network-analysis/)
 
 ## Other projects
 | Project | Question | Methods | Key result |
