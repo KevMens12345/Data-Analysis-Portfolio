@@ -17,6 +17,7 @@ A mixed-methods study using Spotify API data, network analysis (NetworkX, Gephi,
 | [Telecom MySQL Database](telecom-mysql-database/) | How should an operator's customers, usage and billing be modelled and queried? | 9-table 3NF schema, ERD, joins, window functions, stored procedure, data-quality checks | 41% of June billing collected; 3 query bugs and 3 data-consistency issues found and fixed |
 | [Hospital Management SQL App](hospital-management-sql-app/) | How can hospital operations KPIs be served from a relational database? | SQLite schema, parameterised SQL, Streamlit dashboard, PDF reporting | 6-table database, 5 SQL KPIs, interactive dashboard |
 | [A/B Test: Landing Page](ab-test-landing-page/) | Does a redesigned page lift engagement and conversion? | Welch t-test, two-proportion z-test, chi-square, ANOVA | Conversion 66% vs 42% (p = 0.008); roll out the new page |
+| [ReneWind: Wind-Turbine Failure Prediction](renewind-turbine-failure-prediction/) | Can sensor data predict generator failures before they happen? | Imbalanced classification, SMOTE/undersampling, 7 models, tuning, cost-based model selection, pipelines | Test recall 0.84, precision 0.89; about 51% lower maintenance cost (assumed cost ratio) |
 | [Hotel Cancellation Prediction](hotel-cancellation-prediction/) | Which bookings will cancel, and which policies reduce lost revenue? | Logistic regression (VIF, p-values, odds ratios, threshold tuning), decision trees with pre/post-pruning | Pruned tree: recall 0.85, ROC-AUC 0.93; lead time and special requests are the main drivers |
 | [Sensor-Based Quality Prediction](coffee-roasting-quality-prediction/) | Can roasting-machine sensors predict product quality? | Random Forest, Gradient Boosting, XGBoost, tuning, pipelines, leakage check | R² 0.92 on a random split; time-ordered split exposes leakage (R² ≈ 0) |
 | [Stock Segmentation](stock-clustering-trade-ahead/) | Which financial profiles exist among 340 NYSE stocks? | Scaling, K-means, hierarchical clustering, profiling | 4 segments; distressed cluster is 72% Energy |
@@ -32,6 +33,9 @@ pip install -r requirements.txt
 
 ## Tools
 Python (pandas, NumPy, scikit-learn, SciPy/statsmodels, XGBoost, NetworkX, matplotlib, seaborn, Streamlit) · SQL (MySQL, SQLite, HiveQL) · PySpark · Hadoop/HDFS · APIs · Tableau · Gephi · R
+
+## Change log
+See [CHANGELOG.md](CHANGELOG.md) ([Word version](Portfolio_Change_Log.docx)).
 
 ## Contact
 s.kevmens@gmail.com
