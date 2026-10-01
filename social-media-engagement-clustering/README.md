@@ -7,7 +7,7 @@
 **Data:** Facebook Metrics dataset (Moro, Rita & Vala, 2016): 500 posts, 19 columns. The data is embedded in the notebook.
 
 ## Steps
-1. **Cleaning:** 6 missing cells (0.06%): `Paid` ×1, `like` ×4, `share` ×1. These were filled with 0, not the median. The evidence: for those posts, `Total Interactions` already equals comments + likes, which only holds if shares = 0. Median imputation would have invented engagement.
+1. **Cleaning:** 6 missing cells (0.06%): `Paid` ×1, `like` ×1, `share` ×4. These were filled with 0, not the median. The evidence: for those posts, `Total Interactions` already equals comments + likes, which only holds if shares = 0. Median imputation would have invented engagement.
 2. **EDA:** The data is heavily right-skewed. The top post has 6,334 interactions, about 50× the median of 123.5. By post type, video has the highest mean engagement (296, n=7), then status (217, n=45) and photo (217, n=426); links are lowest (89, n=22).
 3. **Preparation:** 9 engagement metrics (reach, impressions, engaged users, likes, shares, comments, etc.). A `log1p` transform reduces the heavy right skew, then `StandardScaler` is applied.
 4. **Choosing k:** The elbow method gives k = 3.
