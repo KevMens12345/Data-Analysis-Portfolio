@@ -3,7 +3,14 @@
 **Goal:** Process a 5-million-row retail customer dataset on a Dockerised Hadoop stack: store it in HDFS, query it with Hive (Tez on YARN), then repeat the analysis and add an ML pipeline in PySpark (local mode, reading from HDFS).
 
 ## Stack
-HDFS · Hive (HiveServer2 / Beeline, Tez on YARN) · PySpark (Spark 3.5, Spark SQL, Spark ML) · Docker
+| Layer | Image / version |
+|---|---|
+| HDFS | Hadoop 3.2.1 (`bde2020/hadoop-namenode`, `bde2020/hadoop-datanode`) |
+| Query | Hive 3.1.3 (`apache/hive`), HiveServer2 + Beeline, Tez on YARN |
+| Processing / ML | PySpark (Spark SQL, Spark ML) in `jupyter/pyspark-notebook` |
+| Runtime | Docker Engine v24+, Docker Compose, macOS on ARM |
+
+*Course project: Big Data Analytics (2025).*
 
 ## Steps
 1. Loaded `retailstore_5mn.csv` (5,015,737 rows: CustomerID, Age, Salary, Gender, Country) into HDFS.
@@ -13,6 +20,21 @@ HDFS · Hive (HiveServer2 / Beeline, Tez on YARN) · PySpark (Spark 3.5, Spark S
 ![Hive on YARN](figures/hive_query_yarn.png)
 
 ![PySpark reading from HDFS](figures/pyspark_hdfs_load.png)
+
+## Spark vs Hive (same aggregation)
+| | PySpark | Hive |
+|---|---|---|
+| Interface | Python DataFrame API | HiveQL |
+| Run time | ~3 s | ~12 s |
+| Output | identical | identical |
+| Best use | ML and iterative work | scheduled batch SQL / ETL |
+
+The comparison is indicative only: one run each, and the Hive time includes Tez container start-up.
+
+## Problems solved
+- **HDFS permissions:** HiveServer2 threw `AccessControlException`. It needed read access to `/bigdata/input` and traverse (execute) permission on every parent directory up to `/`.
+- **ARM compatibility:** some images needed an explicit `platform` setting on Apple Silicon.
+- **Container networking:** Beeline-to-HiveServer2 connection fixed by using container names and correct port bindings.
 
 ## Data-quality observations
 - **Synthetic data:** average salary is about 35,387 in every gender × country group, varying by less than 0.02%.

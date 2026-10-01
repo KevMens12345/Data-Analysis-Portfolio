@@ -4,6 +4,9 @@
 
 **Data:** IBM HR Analytics Employee Attrition dataset (1,470 employees, 35 attributes).
 
+**Live dashboard:** [Tableau Public](https://public.tableau.com/app/profile/kevin.mensah3631/viz/HREmployeeAttrition_17589067929460/Dashboard1)  
+*Course project: Visualization and Storytelling using Tableau (2025).*
+
 ![Dashboard](figures/dashboard.png)
 
 ## KPIs
@@ -33,6 +36,21 @@ Total Employee Status= IF [Employee Status]="Active" AND [Attrition1]="No" THEN 
 - **Largest active roles:** Sales Executive (269), Research Scientist (245) and Laboratory Technician (197).
 
 ![Job satisfaction heatmap](figures/job_satisfaction_heatmap.png)
+
+## Attrition drivers (verified in Python against the source data)
+Two metrics are kept separate: **share of departures** (where leavers come from) and **attrition rate** (risk within a group).
+
+| Group | Leavers | Share of departures | Attrition rate |
+|---|---|---|---|
+| Laboratory Technician | 62 | 26.2% | 23.9% |
+| Sales Executive | 57 | 24.1% | 17.5% |
+| Research Scientist | 47 | 19.8% | 16.1% |
+| Sales Representative | 33 | 13.9% | **39.8%** |
+
+- **Overtime:** 30.5% attrition with overtime vs 10.4% without (about 3×).
+- **Job satisfaction:** attrition falls from 22.8% (rating 1) to 11.3% (rating 4).
+- **Gender:** female 14.8% (87/588) vs male 17.0% (150/882).
+- **Implication:** large roles (Lab Tech, Sales Exec) drive the *volume* of exits; Sales Representatives carry the highest *risk*. Retention actions differ for each.
 
 ## Design notes / next iteration
 - Replace the 9-slice pie chart with a sorted bar chart, which is easier to compare across roles.
