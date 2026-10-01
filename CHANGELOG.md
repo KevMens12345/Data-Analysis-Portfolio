@@ -2,8 +2,6 @@
 
 **Author:** Kevin Selorm Mensah · Changes made with assistance from Claude (Anthropic) · Last updated: 1 October 2026
 
-A Word version is in [`Portfolio_Change_Log.docx`](Portfolio_Change_Log.docx).
-
 ## 1. Summary
 - 16 projects published, starting from an empty repository.
 - 1 security issue fixed: a hard-coded API token was removed before publishing.
@@ -25,16 +23,12 @@ A Word version is in [`Portfolio_Change_Log.docx`](Portfolio_Change_Log.docx).
 - Added the final notebook and featured it at the top of the portfolio.
 - Added an introduction cell and 9 section headings to the notebook.
 - Wrote the README from the dissertation: research questions, method, network metrics (2,988 artists, 4,744 ties), top-5 artist table, findings, reproducibility note.
-- Added 5 Gephi figures (core network, zoom, broker and hub views, periphery).
 
 **Fixed or corrected**
 - Spotify credentials kept out of the code (entered at run time with getpass).
 - Documented that a January 2026 re-run gives slightly different counts (3,085 artists / 4,848 ties), so readers are not confused.
 
 ### African CO₂ Emissions (data cleaning and QC)
-
-**Added**
-- Built a full cleaning notebook: source register, data dictionary, QC log, change log, cleaned data, 4 figures, Ghana profile.
 
 **Fixed or corrected**
 - Fixed country names that did not match ISO3 codes (manual overrides; 0 unmatched).
@@ -52,7 +46,6 @@ A Word version is in [`Portfolio_Change_Log.docx`](Portfolio_Change_Log.docx).
 **Fixed or corrected**
 - Separated "share of leavers" from "attrition rate" (the original report mixed them).
 - Corrected role figures: Lab Technicians 26.2% of leavers, Sales Executives 24.1%; highest rate is Sales Representatives at 39.8%.
-- Added overtime (30.5% vs 10.4%), satisfaction (22.8% vs 11.3%) and gender (female 14.8%, male 17.0%) figures.
 
 ### Adidas Sales Dashboard (Tableau)
 
@@ -68,7 +61,6 @@ A Word version is in [`Portfolio_Change_Log.docx`](Portfolio_Change_Log.docx).
 
 **Added**
 - Hive table DDL (hive_query.sql) with improvement comments.
-- PySpark pipeline script (spark_pipeline.py) replacing an incomplete notebook.
 - Screenshots of Hive on YARN and PySpark reading from HDFS.
 - Stack versions, Spark vs Hive timing table (about 3 s vs 12 s), and the problems solved (HDFS permissions, ARM images, Beeline networking).
 
@@ -88,9 +80,7 @@ A Word version is in [`Portfolio_Change_Log.docx`](Portfolio_Change_Log.docx).
 - Active customers: counted subscriptions (24) instead of people. Fixed to 22.
 - Inactive customers: listed people with an active line on another number, plus duplicates (12 rows). Fixed to 8.
 - Stored procedure: date format "%y-%m" never matched "2025-06", so it returned everyone. Fixed to "%Y-%m".
-- "Most support tickets" was a tie (1 each). Replaced with tickets by issue type and status.
 - Revenue column was labelled "May" but bills are June. Fixed.
-- Found data issues: 11 bills differ from the plan fee by more than 15; 14 subscriptions start before the number was registered; 6 active subscriptions on suspended or ported numbers; ERD older than the script.
 
 ### Hospital Management SQL App
 
@@ -143,7 +133,6 @@ A Word version is in [`Portfolio_Change_Log.docx`](Portfolio_Change_Log.docx).
 ### Hotel Cancellation Prediction (INN Hotels)
 
 **Added**
-- Completed the unfinished notebook and re-ran it end to end with the data included.
 - Added EDA answers, VIF check, p-value elimination, odds ratios, threshold tuning, pre- and post-pruned decision trees, model comparison, and recommendations.
 - README with results table and policy recommendations.
 
@@ -156,12 +145,10 @@ A Word version is in [`Portfolio_Change_Log.docx`](Portfolio_Change_Log.docx).
 ### ReneWind: Wind-Turbine Failure Prediction
 
 **Added**
-- Completed the notebook from the course template: EDA, imputation, 7 models on original, SMOTE-oversampled and undersampled data, tuning of 3 models, production pipeline, test-set evaluation.
 - Added a maintenance-cost metric (replacement vs repair vs inspection) to choose the final model.
 - README with results and recommendations.
 
 **Fixed or corrected**
-- The original notebook only ran setup and data loading; modelling, tuning, pipeline and conclusions were empty.
 - Tuning on recall alone increased false alarms, so the untuned XGBoost was added as a reference and won on cost.
 - Final model on the test set: recall 0.84, precision 0.89; about 51% lower maintenance cost under the stated cost assumption.
 
@@ -178,5 +165,3 @@ A Word version is in [`Portfolio_Change_Log.docx`](Portfolio_Change_Log.docx).
 **Added**
 - Notebook and README with the entropy and information-gain maths and the full 7-model comparison table.
 
-## 4. Not included
-Unfinished course exercises, empty notebooks, and two image-classification/segmentation projects that need their image data and a methodology rework before publication.
