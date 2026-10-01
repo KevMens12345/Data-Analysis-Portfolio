@@ -14,6 +14,7 @@ A mixed-methods study using Spotify API data, network analysis (NetworkX, Gephi,
 | [Employee Attrition Dashboard](hr-attrition-tableau-dashboard/) | Where is attrition concentrated, and what drives it? | Tableau calculated fields, parameters; figures checked in Python | 16.1% attrition; Sales Reps 39.8% rate; overtime triples attrition (30.5% vs 10.4%) |
 | [Adidas Sales Dashboard](adidas-sales-dashboard/) | Which regions, retailers, products and channels drive sales and profit? | Tableau parameters (KPI selector, Top N), maps, dual-axis target tracking | One dashboard for 4 stakeholder groups; target-logic flaw identified and redesign proposed |
 | [Big Data Pipeline](big-data-hive-spark/) | Can a 5M-row dataset be processed on a distributed stack? | HDFS, Hive on Tez/YARN, PySpark SQL + Spark ML, Docker | 5,015,737 rows aggregated in ~12 s; synthetic-data and outlier issues flagged |
+| [Telecom MySQL Database](telecom-mysql-database/) | How should an operator's customers, usage and billing be modelled and queried? | 9-table 3NF schema, ERD, joins, window functions, stored procedure, data-quality checks | 41% of June billing collected; 3 query bugs and 3 data-consistency issues found and fixed |
 | [Hospital Management SQL App](hospital-management-sql-app/) | How can hospital operations KPIs be served from a relational database? | SQLite schema, parameterised SQL, Streamlit dashboard, PDF reporting | 6-table database, 5 SQL KPIs, interactive dashboard |
 | [Social Media Engagement Clustering](social-media-engagement-clustering/) | Which engagement segments exist in a brand's Facebook posts? | Log transform, scaling, elbow method, K-Means vs. hierarchical, PCA | 3 segments; K-Means silhouette 0.346 vs. 0.228 for hierarchical |
 | [Mushroom Classification](mushroom-classification/) | Can physical traits predict if a mushroom is poisonous? | EDA, label encoding, 7 classifiers compared | Tree models reach 100% test accuracy; odor alone almost separates the classes |
@@ -25,7 +26,7 @@ pip install -r requirements.txt
 ```
 
 ## Tools
-Python (pandas, NumPy, scikit-learn, NetworkX, matplotlib, seaborn, Streamlit) · SQL (SQLite, HiveQL) · PySpark · Hadoop/HDFS · APIs · Tableau · Gephi · R
+Python (pandas, NumPy, scikit-learn, NetworkX, matplotlib, seaborn, Streamlit) · SQL (MySQL, SQLite, HiveQL) · PySpark · Hadoop/HDFS · APIs · Tableau · Gephi · R
 
 ## Contact
 s.kevmens@gmail.com
