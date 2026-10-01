@@ -3,9 +3,8 @@
 **Author:** Kevin Selorm Mensah · Changes made with assistance from Claude (Anthropic) · Last updated: 1 October 2026
 
 ## 1. Summary
-- 16 projects published, starting from an empty repository.
-- 1 security issue fixed: a hard-coded API token was removed before publishing.
-- Wrong conclusions or wrong numbers corrected in 11 projects; 2 unfinished projects completed.
+- 16 projects published.
+- Wrong conclusions or wrong numbers corrected; 2 unfinished projects completed.
 - All numbers in the READMEs were checked against the data or the notebook outputs.
 
 ## 2. Repository setup
