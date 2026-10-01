@@ -32,14 +32,6 @@ All views follow the same KPI, channel and date controls, and use dynamic titles
 ## Calculated fields
 `Selected KPI`, `KPI Selector Value`, `Top N Filter`, `Target Sales`, `Target Achievement`, `Sales Growth`, `Profit Margin`, `Average Sales per Retailer`, `Order Month`, `Order Year`, `Date Range Filter`, `Sales Method Filter`.
 
-```
-Selected KPI  = CASE [KPI Selector]
-                  WHEN "Total Sales"      THEN SUM([Total Sales])
-                  WHEN "Operating Profit" THEN SUM([Operating Profit])
-                  WHEN "Units Sold"       THEN SUM([Units Sold]) END
-Profit Margin = SUM([Operating Profit]) / SUM([Total Sales])
-```
-
 ## Insights (from the report)
 - Sales concentrate in large states (California, Texas, New York).
 - Footwear lines rank in the top five for every KPI.
